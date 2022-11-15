@@ -1,4 +1,5 @@
-<p>rooms in {{ hotelName }} works!</p>
+<!-- <p>rooms in {{ hotelName }} works!</p> -->
+<app-header></app-header>
 <div [hidden]="hideRooms">
   Number of rooms
   <div [innerText]="numberOfRooms"></div>
@@ -14,6 +15,7 @@
 <div *ngIf="rooms?.availableRooms">
   <app-rooms-list
     [rooms]="this.roomList"
+    [title]="this.title"
     (selectedRoom)="selectRoom($event)"
   ></app-rooms-list>
 </div>
