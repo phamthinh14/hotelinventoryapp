@@ -1,5 +1,5 @@
 Rooms List
-<table>
+<table class="table">
   <th>Index</th>
   <th>Even/Odd</th>
   <th>Room Number</th>
@@ -11,7 +11,7 @@ Rooms List
   <th>Select Room</th>
   <tr
     [ngClass]="e ? 'even' : 'odd'"
-    *ngFor="let room of rooms | slice: 0 : 3; let e = even; let o = odd; let i = index"
+    *ngFor="let room of rooms; let e = even; let o = odd; let i = index"
   >
     <td>{{ i | percent }}</td>
     <td>{{ e ? "Even" : "Odd" }}</td>

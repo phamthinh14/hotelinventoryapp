@@ -10,6 +10,9 @@ export class RoomsComponent implements OnInit {
   hotelName: string = 'California';
   numberOfRooms: number = 10;
   hideRooms: boolean = false;
+
+  selectedRoom!: RoomList;
+
   rooms: Room = {
     availableRooms: 10,
     bookedRooms: 5,
@@ -63,6 +66,20 @@ export class RoomsComponent implements OnInit {
   }
 
   selectRoom(room: RoomList) {
-    console.log(room);
+    this.selectedRoom = room;
+  }
+  addRoom() {
+    const room: RoomList = {
+      roomNumber: 4,
+      roomType: 'Deluxe Room',
+      amenities: 'Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen',
+      price: 500,
+      photos:
+        'https://cache.marriott.com/content/dam/marriott-renditions/WASLR/waslr-desk-0002-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1215px:*',
+      checkInTime: new Date('11-Nov-2022'),
+      checkOutTime: new Date('11-Nov-2022'),
+      rating: 4.5,
+    };
+    this.roomList = [...this.roomList, room];
   }
 }
